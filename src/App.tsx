@@ -5,15 +5,15 @@ import { getTheme } from "theme";
 import Layout from "layout/layout";
 
 const App = () => {
-  const [mode] = useState<ThemeMode>("light");
+  const [mode, setMode] = useState<ThemeMode>("light");
 
-  // const toggleMode = () => {
-  //   setMode((prev) => (prev === "light" ? "dark" : "light"));
-  // };
+  const toggleTheme = () => {
+    setMode((prev) => (prev === "light" ? "dark" : "light"));
+  };
 
   return (
     <ThemeProvider theme={getTheme(mode)}>
-      <Layout>
+      <Layout toggleTheme={toggleTheme}>
         <></>
       </Layout>
     </ThemeProvider>
