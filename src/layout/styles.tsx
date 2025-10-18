@@ -22,6 +22,8 @@ export const LayoutHeader = styled.div<{ theme: Theme }>`
   background-color: ${(props) => props.theme.layoutColor};
   border-bottom: 1px solid;
   border-color: ${(props) => props.theme.layoutBorderColor};
+  position: relative;
+  z-index: 3;
 `;
 
 export const LayoutFooter = styled.div<{ theme: Theme }>`
@@ -44,19 +46,19 @@ export const LayoutFooter = styled.div<{ theme: Theme }>`
 export const FooterText = styled.p<{ theme: Theme }>`
   font-weight: 400;
   font-size: 16px;
-  color: #ffffff;
+  color: ${(props) => props.theme.text};
 `;
 
 export const CubosText = styled.p<{ theme: Theme }>`
   font-weight: 600;
   font-size: 16px;
-  color: #ffffff;
+  color: ${(props) => props.theme.text};
 `;
 
 export const Title = styled.p<{ theme: Theme }>`
   font-weight: 700px;
   font-size: 20px;
-  color: #ffffff;
+  color: ${(props) => props.theme.text};
 `;
 
 export const TitleContainer = styled.div<{ theme: Theme }>`
@@ -86,6 +88,8 @@ export const PageContainer = styled.div<{ theme: Theme }>`
   left: 0;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
   &::before {
     content: "";

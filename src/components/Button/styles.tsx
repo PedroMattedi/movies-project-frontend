@@ -14,6 +14,7 @@ export const ButtonContainer = styled.button<{ theme: Theme }>`
   font-family: inherit;
   line-height: 1;
   box-sizing: border-box;
+  cursor: pointer;
 `;
 
 export const ButtonText = styled.p<{ theme: Theme }>`

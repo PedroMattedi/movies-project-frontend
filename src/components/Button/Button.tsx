@@ -1,13 +1,18 @@
+import type { ButtonHTMLAttributes, ReactNode } from "react";
 import * as Styled from "./styles";
 
-interface Button {
-  text: string;
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  children: ReactNode;
 }
 
-const Button = ({ text }: Button) => {
+const Button = ({ children, ...rest }: ButtonProps) => {
   return (
-    <Styled.ButtonContainer>
-      <Styled.ButtonText>{text}</Styled.ButtonText>
+    <Styled.ButtonContainer {...rest}>
+      {typeof children === "string" ? (
+        <Styled.ButtonText>{children}</Styled.ButtonText>
+      ) : (
+        children
+      )}
     </Styled.ButtonContainer>
   );
 };

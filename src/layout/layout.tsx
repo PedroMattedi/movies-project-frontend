@@ -1,16 +1,15 @@
-import { type ReactElement } from "react";
 import * as Styled from "./styles";
-import ThemeButton from "./Components/ThemeButton/ThemeButton";
 import CubosLogo from "components/CubosLogo/CubosLogo";
 import Button from "components/Button/Button";
 import SunLogo from "components/SunIcon/SunIcon";
+import Login from "pages/Login/Login";
 
 interface Layout {
-  children: ReactElement;
   toggleTheme: () => void;
+  loggedIn: boolean;
 }
 
-const Layout = ({ children, toggleTheme }: Layout) => {
+const Layout = ({ toggleTheme, loggedIn }: Layout) => {
   return (
     <Styled.PageContainer>
       <Styled.LayoutContainer>
@@ -20,17 +19,20 @@ const Layout = ({ children, toggleTheme }: Layout) => {
             <Styled.Title>Movies</Styled.Title>
           </Styled.TitleContainer>
           <Styled.ButtonsRow>
-            <ThemeButton onClick={toggleTheme}>
+            <Button
+              onClick={toggleTheme}
+              style={{ backgroundColor: "#B744F714", padding: "0px 20px" }}
+            >
               <SunLogo />
-            </ThemeButton>
-            <Button text={"Logout"} />
+            </Button>
+            {loggedIn && <Button>Logout</Button>}
           </Styled.ButtonsRow>
         </Styled.LayoutHeader>
-        {children}
       </Styled.LayoutContainer>
+      <Login />
       <Styled.LayoutFooter>
         <Styled.FooterText>
-          2025 © Todos os direitos reservados a{" "}
+          2025 © Todos os direitos reservados a
         </Styled.FooterText>
         <Styled.CubosText>Cubos Movies</Styled.CubosText>
       </Styled.LayoutFooter>
