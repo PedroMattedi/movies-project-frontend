@@ -13,5 +13,4 @@ export const ThemeButtonContainer = styled.button<{ theme: Theme }>`
   font-size: inherit;
   font-family: inherit;
   line-height: 1;
-  box-sizing: border-box;
 `;
