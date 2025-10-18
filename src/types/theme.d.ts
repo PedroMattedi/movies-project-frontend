@@ -9,4 +9,7 @@ export interface Theme {
   themeButton: string;
   mainButton: string;
   mainButtonText: string;
+  loginBackground: string;
+  inputBg: string;
+  inputBorderColor: string;
 }
