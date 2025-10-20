@@ -70,6 +70,6 @@ export const PaginationSection = styled.div<{ theme: Theme }>`
 
   @media (max-width: 414px) {
     padding: 16px;
-    gap: 6px;
+    gap: 12px;
   }
 `;

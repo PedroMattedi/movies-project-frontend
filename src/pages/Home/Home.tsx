@@ -3,6 +3,7 @@ import MoviesCard from "./components/MoviesCard/MoviesCard";
 import * as Styled from "./styles";
 import InputComponent from "components/Input/Input";
 import Pagination from "components/Pagination/Pagination";
+import YoutubeEmbed from "components/Video/VideoComponent";
 
 const Home = () => {
   return (
