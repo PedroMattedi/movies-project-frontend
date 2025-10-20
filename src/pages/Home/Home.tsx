@@ -11,11 +11,22 @@ const Home = () => {
         <InputComponent
           placeholder="Pesquise por filmes"
           onChange={() => {}}
-          value={""}
+          value=""
+          style={{ width: "488px" }}
         />
-        <Button style={{ backgroundColor: "#B744F714" }}>Filtros</Button>
-        <Button>Adicionar Filme</Button>
+        <>
+          <Button
+            style={{
+              backgroundColor: "#B744F714",
+              width: "85px",
+            }}
+          >
+            Filtros
+          </Button>
+          <Button style={{ width: "151px" }}>Adicionar Filme</Button>
+        </>
       </Styled.FilterRow>
+
       <Styled.MoviesContainer>
         <MoviesCard></MoviesCard>
         <MoviesCard></MoviesCard>

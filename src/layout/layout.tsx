@@ -15,7 +15,9 @@ const Layout = ({ toggleTheme, loggedIn, children }: Layout) => {
     <Styled.PageContainer>
       <Styled.LayoutHeader>
         <Styled.TitleContainer>
-          <CubosLogo />
+          <Styled.LogoWrapper>
+            <CubosLogo />
+          </Styled.LogoWrapper>
           <Styled.Title>Movies</Styled.Title>
         </Styled.TitleContainer>
         <Styled.ButtonsRow>
@@ -28,6 +30,7 @@ const Layout = ({ toggleTheme, loggedIn, children }: Layout) => {
           {loggedIn && <Button>Logout</Button>}
         </Styled.ButtonsRow>
       </Styled.LayoutHeader>
+      <Styled.ImageBackground />
       <Styled.ChildrenContent>{children}</Styled.ChildrenContent>
       <Styled.LayoutFooter>
         <Styled.FooterText>

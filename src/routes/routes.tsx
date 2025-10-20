@@ -5,7 +5,7 @@ import { getTheme } from "../theme";
 import type { ThemeMode } from "../types/theme";
 import AuthRoutes from "./AuthRoutes";
 import PrivateRoutes from "./PrivateRoutes";
-import Layout from "layout/Layout";
+import Layout from "layout/layout";
 
 const AppRoutes = () => {
   const [mode, setMode] = useState<ThemeMode>("light");

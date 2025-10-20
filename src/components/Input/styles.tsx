@@ -4,7 +4,7 @@ import type { Theme } from "types/theme";
 export const InputAndLabel = styled.div<{ theme: Theme }>`
   display: flex;
   flex-direction: column;
-  width: 100%;
+  max-width: 100%;
   gap: 8px;
 `;
 

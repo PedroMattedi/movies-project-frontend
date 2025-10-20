@@ -5,22 +5,29 @@ import type { Theme } from "types/theme";
 export const PageContainer = styled.div<{ theme: Theme }>`
   width: 100%;
   min-height: 100vh;
+  background-color: #121113;
+  background-size: cover;
+  background-position: center;
+  overflow-y: auto;
+`;
+
+export const LogoWrapper = styled.div`
+  @media (max-width: 450px) {
+    display: none;
+  }
+`;
+
+export const ImageBackground = styled.div<{ theme: Theme }>`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80vh;
   background-image: url(${images.backgroundCrowd});
   background-size: cover;
   background-position: center;
-  position: relative;
-  overflow-y: auto;
-
-  &::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    z-index: 1;
-  }
+  opacity: 0.1;
+  z-index: 0;
 `;
 
 export const LayoutHeader = styled.div<{ theme: Theme }>`
@@ -61,13 +68,13 @@ export const ButtonsRow = styled.div<{ theme: Theme }>`
 `;
 
 export const ChildrenContent = styled.div<{ theme: Theme }>`
-  flex: 1;
   width: 100%;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
-  z-index: 2;
   padding-bottom: 60px;
+  position: relative;
+  z-index: 2;
 `;
 
 export const LayoutFooter = styled.div<{ theme: Theme }>`
