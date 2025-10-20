@@ -1,22 +1,10 @@
 import { Routes, Route } from "react-router-dom";
-import Layout from "../layout/Layout";
+import Home from "pages/Home/Home";
 
-interface PrivateRoutesProps {
-  toggleTheme: () => void;
-  loggedIn: boolean;
-}
-
-const PrivateRoutes = ({ toggleTheme, loggedIn }: PrivateRoutesProps) => {
-  return (
-    <Routes>
-      <Route
-        path="/"
-        element={<Layout toggleTheme={toggleTheme} loggedIn={loggedIn} />}
-      >
-        {/* <Route index element={<Home />} /> */}
-      </Route>
-    </Routes>
-  );
-};
+const PrivateRoutes = () => (
+  <Routes>
+    <Route index element={<Home />} />
+  </Routes>
+);
 
 export default PrivateRoutes;
