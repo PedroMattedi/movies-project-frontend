@@ -68,11 +68,11 @@ export const ButtonsRow = styled.div<{ theme: Theme }>`
 `;
 
 export const ChildrenContent = styled.div<{ theme: Theme }>`
-  width: 100%;
+  height: 100%;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   overflow-y: auto;
-  padding-bottom: 60px;
   position: relative;
   z-index: 2;
 `;

@@ -36,6 +36,8 @@ const Home = () => {
         <MoviesCard></MoviesCard>
         <MoviesCard></MoviesCard>
         <MoviesCard></MoviesCard>
+        <MoviesCard></MoviesCard>
+        <MoviesCard></MoviesCard>
       </Styled.MoviesContainer>
       <Styled.PaginationSection>
         <Pagination currentPage={1} onPageChange={() => {}} totalPages={10} />

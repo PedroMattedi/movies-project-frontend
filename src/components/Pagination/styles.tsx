@@ -22,6 +22,7 @@ export const PaginationButton = styled.button<{
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
 
   &:disabled {
     opacity: 0.5;

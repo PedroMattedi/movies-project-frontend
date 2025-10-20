@@ -8,7 +8,7 @@ import PrivateRoutes from "./PrivateRoutes";
 import Layout from "layout/layout";
 
 const AppRoutes = () => {
-  const [mode, setMode] = useState<ThemeMode>("light");
+  const [mode, setMode] = useState<ThemeMode>("dark");
   const [isAuthenticated] = useState(true);
 
   const toggleTheme = () => {

@@ -21,7 +21,6 @@ export const InputContainer = styled.input<{ theme: Theme }>`
   height: 44px;
   background-color: ${(props) => props.theme.inputBg};
   border-color: ${(props) => props.theme.inputBorderColor};
-  width: 380px;
   color: #ffffff;
 `;
 

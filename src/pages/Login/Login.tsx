@@ -7,20 +7,22 @@ const Login = () => {
   const { authOrRegister, setAuthOrRegister } = useLogin();
 
   return (
-    <Styled.LoginFormContainer>
-      {authOrRegister === "auth" && (
-        <AuthComponent
-          onSubmit={() => {}}
-          onRegisterClick={() => setAuthOrRegister("register")}
-        />
-      )}
-      {authOrRegister === "register" && (
-        <RegisterComponent
-          onSubmit={() => {}}
-          onAccountExistClick={() => setAuthOrRegister("auth")}
-        />
-      )}
-    </Styled.LoginFormContainer>
+    <Styled.PageContainer>
+      <Styled.LoginFormContainer>
+        {authOrRegister === "auth" && (
+          <AuthComponent
+            onSubmit={() => {}}
+            onRegisterClick={() => setAuthOrRegister("register")}
+          />
+        )}
+        {authOrRegister === "register" && (
+          <RegisterComponent
+            onSubmit={() => {}}
+            onAccountExistClick={() => setAuthOrRegister("auth")}
+          />
+        )}
+      </Styled.LoginFormContainer>
+    </Styled.PageContainer>
   );
 };
 
