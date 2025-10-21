@@ -1,23 +1,7 @@
-import { ThemeProvider } from "styled-components";
-import { useState } from "react";
-import type { ThemeMode } from "./types/theme";
-import { getTheme } from "theme";
-import Layout from "layout/layout";
+import AppRoutes from "routes/routes";
 
 const App = () => {
-  const [mode] = useState<ThemeMode>("light");
-
-  // const toggleMode = () => {
-  //   setMode((prev) => (prev === "light" ? "dark" : "light"));
-  // };
-
-  return (
-    <ThemeProvider theme={getTheme(mode)}>
-      <Layout>
-        <></>
-      </Layout>
-    </ThemeProvider>
-  );
+  return <AppRoutes />;
 };
 
 export default App;
