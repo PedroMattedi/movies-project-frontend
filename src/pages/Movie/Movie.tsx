@@ -90,19 +90,7 @@ const Movie = () => {
 
           <Styled.ActionButtonsRow>
             <Button onClick={handleDelete}>Deletar</Button>
-            <Button
-              onClick={() => {
-                if (onSubmit) onSubmit(form);
-                else handleAdd();
-              }}
-              disabled={loading}
-            >
-              {loading
-                ? "Salvando..."
-                : onSubmit
-                ? "Salvar Alterações"
-                : "Adicionar Filme"}
-            </Button>
+            <Button onClick={() => setIsEditOpen(true)}>Editar</Button>
           </Styled.ActionButtonsRow>
         </Styled.MovieHeaderAndActions>
 
