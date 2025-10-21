@@ -14,23 +14,6 @@ export const PageContainer = styled.div`
   gap: 32px;
 `;
 
-export const MovieInfoContainer = styled.div`
-  position: relative;
-  width: 100%;
-  max-width: 1302px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  @media (max-width: 768px) {
-    max-width: 100%;
-  }
-
-  @media (max-width: 414px) {
-    max-width: 100%;
-    margin: 0;
-  }
-`;
-
 export const VideoContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -50,42 +33,58 @@ export const VideoContainer = styled.div`
   }
 `;
 
-export const MovieHeaderAndActions = styled.div`
+export const MovieInfoContainer = styled.div`
+  position: relative;
+  width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  gap: 24px;
+  color: white;
+  padding: 32px;
+  border-radius: 8px;
+  overflow: hidden;
+`;
+
+export const BackgroundOverlay = styled.div`
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(10px);
+  z-index: 0;
+`;
+
+export const MovieHeaderAndActions = styled.div`
+  position: relative;
+  z-index: 2;
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 59px;
 `;
 
 export const TitlesColumn = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 4px;
 `;
 
-export const ActionButtonsRow = styled.div`
-  display: flex;
-  flex-direction: row;
-  gap: 16px;
+export const TitleText = styled.h1`
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+`;
+
+export const SubtitleText = styled.p`
+  font-size: 14px;
+  opacity: 0.8;
 `;
 
 export const AllInfosRow = styled.div`
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: row;
-  position: relative;
-  width: 100%;
-  max-width: 1238px;
-  margin: 0 auto;
-  gap: 16px;
-
-  @media (max-width: 768px) {
-    max-width: 100%;
-  }
-
-  @media (max-width: 414px) {
-    max-width: 100%;
-    margin: 0;
-  }
+  align-items: flex-start;
+  gap: 32px;
 `;
 
 export const MovieCardImage = styled.div`
@@ -156,4 +155,10 @@ export const GeneralInfoSection = styled.div`
 export const InfoCardsRow = styled.div`
   display: flex;
   flex-direction: row;
+`;
+
+export const ActionButtonsRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
 `;

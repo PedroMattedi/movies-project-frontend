@@ -1,50 +1,37 @@
 import styled from "styled-components";
-import type { Theme } from "types/theme";
 
-export const CardContainer = styled.div<{ theme: Theme }>`
-  height: 355px;
+export const CardContainer = styled.div`
+  position: relative;
   width: 235px;
+  height: 355px;
   border-radius: 4px;
-  padding: 24px;
-  gap: 24px;
-  background-color: green;
-  flex-shrink: 0;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  background-color: #0f0f0f;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
 
   &:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: scale(1.03);
   }
+`;
 
-  @media (max-width: 1440px) {
-    height: 320px;
-    width: 210px;
-  }
+export const MovieImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
 
-  @media (max-width: 1024px) {
-    height: 300px;
-    width: 190px;
-    padding: 20px;
-  }
-
-  @media (max-width: 768px) {
-    height: 280px;
-    width: 170px;
-    padding: 16px;
-    gap: 16px;
-  }
-
-  @media (max-width: 600px) {
-    height: 240px;
-    width: 150px;
-    padding: 12px;
-    gap: 12px;
-  }
-
-  @media (max-width: 480px) {
-    height: 220px;
-    width: 140px;
-    padding: 12px;
-    gap: 12px;
-  }
+export const MovieTitle = styled.p`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  text-transform: uppercase;
 `;

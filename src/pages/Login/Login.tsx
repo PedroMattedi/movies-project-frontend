@@ -11,13 +11,11 @@ const Login = () => {
       <Styled.LoginFormContainer>
         {authOrRegister === "auth" && (
           <AuthComponent
-            onSubmit={() => {}}
             onRegisterClick={() => setAuthOrRegister("register")}
           />
         )}
         {authOrRegister === "register" && (
           <RegisterComponent
-            onSubmit={() => {}}
             onAccountExistClick={() => setAuthOrRegister("auth")}
           />
         )}

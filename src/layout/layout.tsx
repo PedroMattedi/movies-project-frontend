@@ -3,6 +3,7 @@ import CubosLogo from "components/CubosLogo/CubosLogo";
 import Button from "components/Button/Button";
 import SunLogo from "components/SunIcon/SunIcon";
 import type { ReactNode } from "react";
+import { useAuth } from "context/AuthContext";
 
 interface Layout {
   toggleTheme: () => void;
@@ -11,6 +12,7 @@ interface Layout {
 }
 
 const Layout = ({ toggleTheme, loggedIn, children }: Layout) => {
+  const { logout } = useAuth();
   return (
     <Styled.PageContainer>
       <Styled.LayoutHeader>
@@ -27,7 +29,7 @@ const Layout = ({ toggleTheme, loggedIn, children }: Layout) => {
           >
             <SunLogo />
           </Button>
-          {loggedIn && <Button>Logout</Button>}
+          {loggedIn && <Button onClick={logout}>Logout</Button>}
         </Styled.ButtonsRow>
       </Styled.LayoutHeader>
       <Styled.ImageBackground />

@@ -1,17 +1,37 @@
 import Button from "components/Button/Button";
 import * as Styled from "./styles";
 import { useState } from "react";
+import { registerUser } from "services/endpoints/auth";
 
 interface IAuthProps {
-  onSubmit?: () => void;
   onAccountExistClick: () => void;
 }
 
-const RegisterComponent = ({ onSubmit, onAccountExistClick }: IAuthProps) => {
+const RegisterComponent = ({ onAccountExistClick }: IAuthProps) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  async function handleRegister() {
+    if (password !== confirmPassword) {
+      alert("As senhas não coincidem!");
+      return;
+    }
+
+    try {
+      setLoading(true);
+      const data = await registerUser({ name, email, password });
+      console.log("Usuário registrado:", data.user);
+      alert("Cadastro realizado com sucesso!");
+    } catch (error: any) {
+      console.error(error);
+      alert(error.response?.data?.message || "Erro ao registrar usuário");
+    } finally {
+      setLoading(false);
+    }
+  }
 
   return (
     <>
@@ -49,7 +69,9 @@ const RegisterComponent = ({ onSubmit, onAccountExistClick }: IAuthProps) => {
         <Styled.ForgotPasswordText onClick={onAccountExistClick}>
           Já tem uma conta?
         </Styled.ForgotPasswordText>
-        <Button onClick={onSubmit}>Cadastrar</Button>
+        <Button onClick={handleRegister} disabled={loading}>
+          {loading ? "Cadastrando..." : "Cadastrar"}
+        </Button>
       </Styled.ButtonsRow>
     </>
   );
